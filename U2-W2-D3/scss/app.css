@@ -1,0 +1,172 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  color: red;
+}
+
+nav {
+  text-align: center;
+  margin-top: 2em;
+}
+nav .navbar {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+@media screen and (min-width: 600px) {
+  nav .navbar {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+nav .navbar a {
+  text-decoration: none;
+}
+@media screen and (min-width: 600px) {
+  nav .navbar a {
+    color: red;
+  }
+}
+
+.button-container {
+  text-align: center;
+}
+
+button.primary-button {
+  background-color: lightblue;
+  color: black;
+  border-radius: 20px;
+  padding: 10px 20px;
+  border-color: rgb(135, 166, 176);
+  cursor: pointer;
+}
+button.primary-button:hover {
+  color: white;
+  background-color: rgb(58, 58, 233);
+  border-color: rgb(45, 45, 166);
+}
+
+nav ul li {
+  font-size: 0.9em;
+}
+nav ul li:nth-of-type(3) {
+  font-size: 1.2em;
+}
+
+p.main-paragraph {
+  font-size: 1.15em;
+  font-weight: 700;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 35px;
+}
+
+header .header p {
+  color: rgb(20, 200, 120);
+}
+
+p {
+  border: 2px dotted darkcyan;
+}
+
+.special-button-sm {
+  color: darkviolet;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 100px;
+}
+
+.special-button-lg {
+  color: darkviolet;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 200px;
+}
+
+.margin-top {
+  margin-top: 35px;
+}
+
+.custom-button-sm {
+  background-color: antiquewhite;
+  color: black;
+  border-radius: 15px;
+  width: 100px;
+}
+
+.custom-button-lg {
+  background-color: antiquewhite;
+  color: black;
+  border-radius: 15px;
+  width: 200px;
+}
+
+.list {
+  display: "block";
+}
+
+.list-responsive {
+  display: "flex";
+}
+
+.text-big {
+  font-size: 2em;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.testclass {
+  color: "red";
+}
+
+.text-576px {
+  max-width: 576px;
+}
+
+.text-768px {
+  max-width: 768px;
+}
+
+.text-1024px {
+  max-width: 1024px;
+}
+
+.text-1200px {
+  max-width: 1200px;
+}
+
+.margin-xs {
+  margin: 10px;
+}
+
+.margin-sm {
+  margin: 12px;
+}
+
+.margin-md {
+  margin: 15px;
+}
+
+.margin-lg {
+  margin: 18px;
+}
+
+.margin-xl {
+  margin: 36px;
+}/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Navbar</title>
+    <style>
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      nav {
+        background: orangered;
+        padding: 1em 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0 0 20px; /* non va bene in modalità "desktop" */
+        padding: 0;
+        text-align: center;
+        color: white;
+      }
+
+      nav form {
+        text-align: center;
+      }
+
+      nav form button {
+        background-color: white;
+        border: 1px solid red;
+        width: 3em;
+        border-radius: 50px;
+        color: orangered;
+      }
+
+      @media screen and (min-width: 577px) {
+        /* proprietà per la versione "desktop" */
+        nav {
+          flex-direction: row;
+        }
+
+        nav form {
+          margin-right: 1em; /* spazia leggermente il form dal bordo destro */
+        }
+
+        nav ul {
+          margin: 0 0 0 0.5em; /* azzera il margine inferiore e imposta 0.5em a sx */
+          display: flex;
+        }
+
+        nav ul li {
+          margin-right: 0.5em; /* 8px */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Logo</li>
+          <li>Home</li>
+          <li>Products</li>
+          <li>Service</li>
+        </ul>
+        <form>
+          <input type="search" placeholder="Search" />
+          <button type="submit">GO</button>
+        </form>
+      </nav>
+    </header>
+  </body>
+</html>

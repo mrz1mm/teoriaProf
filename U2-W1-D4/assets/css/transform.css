@@ -1,0 +1,39 @@
+.box {
+  width: 150px;
+  height: 150px;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotate {
+  background-color: greenyellow;
+  transform: rotate(78deg);
+  /* transform: rotate3d(); rotazione in 3d */
+}
+
+.skew {
+  background-color: orange;
+  transform: skew(314deg, 202deg);
+}
+
+.scale {
+  background-color: cadetblue;
+  transform: scale(1.35); /* 50% più grande */
+}
+
+.translate {
+  background-color: crimson;
+  transform: translate(590px, -580px);
+  /* 50px a dx, 50px in alto */
+}
+
+.combined {
+  background-color: darkseagreen;
+  transform: rotate(13deg) scale(1.3) translate(300px, -20px);
+  /* dovete applicare tutte le trasformazione come SINGOLO valore di transform, NON così! */
+  /* transform: rotate(13deg);
+  transform: scale(1.3);
+  transform: translate(300px, -20px); */
+}

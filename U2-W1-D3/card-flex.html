@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Card</title>
+    <style>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      article.card {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        border: 1px solid lightgrey;
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+        margin: 1em;
+      }
+
+      .card .text-container {
+        padding: 0 1em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        /* faccio mangiare a questo div tutto l'eventuale spazio vuoto nella card */
+        flex-grow: 1;
+        /* distribuisco tutto questo eventuale spazio vuoto tra il titolo e il paragrafo, e tra il paragrafo e il bottone */
+        justify-content: space-between;
+      }
+
+      .text-container button {
+        width: 50%;
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="card">
+        <img src="https://placedog.net/300" alt="dog picture" />
+        <div class="text-container">
+          <h3>Lorem, ipsum dolor sit amet</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+            iure rerum dolore iusto perspiciatis vitae minima sed voluptas,
+            alias officia dolorum ex earum, dignissimos aut totam quaerat
+            asperiores at doloremque. Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Nihil, iure rerum dolore iusto perspiciatis vitae
+            minima sed voluptas, alias officia dolorum ex earum, dignissimos aut
+            totam quaerat asperiores at doloremque.
+          </p>
+          <button>Go to page</button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://placedog.net/300" alt="dog picture" />
+        <div class="text-container">
+          <h3>Lorem, ipsum dolor sit amet</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button>Go to page</button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://placedog.net/300" alt="dog picture" />
+        <div class="text-container">
+          <h3>Lorem, ipsum dolor sit amet</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+            iure rerum dolore iusto perspiciatis vitae minima sed voluptas,
+            alias officia dolorum ex earum, dignissimos aut totam quaerat
+            asperiores at doloremque.
+          </p>
+          <button>Go to page</button>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

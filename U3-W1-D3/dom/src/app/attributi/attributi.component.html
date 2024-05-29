@@ -1,0 +1,13 @@
+<!--in questo caso la stringa contiene html, quindi per far sì che questo venga interpretato è necessario agire con la proprietà degli oggeti del DOM chiamata innerHTML-->
+<p [innerHTML]="stringHTML"></p>
+
+<!-- Altro esempio di accesso alle prop del DOM -->
+<p [style.backgroundColor]="bg">Area colorata</p>
+
+<!--
+  Per assegnare ad un attributo un valore derivante da una proprietà devo sempre ricorrere alle parentesi quadre
+ -->
+<img [src]="urlImmagine">
+
+<!--Usare l'interpolazione per questo scopo funziona, ma è uno strappo alla regola-->
+<img src="{{urlImmagine}}">

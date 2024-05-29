@@ -1,0 +1,133 @@
+/* definiamo un'animazione completamente personalizzata */
+/* il valore percentuale identifica lo svolgimento dell'animazione */
+/* 0% -> inizio dell'animazione */
+/* 100% -> fine dell'animazione */
+
+@keyframes boxAnimation {
+  0% {
+    /* il punto iniziale */
+    background-color: blue;
+  }
+
+  50% {
+    background-color: yellow;
+  }
+
+  75% {
+    background-color: purple;
+  }
+
+  100% {
+    /* il punto finale */
+    background-color: red;
+  }
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* animation: nome durata curva-di-accelerazione ritardo numero-volte */
+  animation: boxAnimation 4s linear 0s infinite;
+}
+
+.rect {
+  width: 300px;
+  height: 150px;
+  background-color: orange;
+  animation: rectAnimation 6s linear 0s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rectAnimation {
+  0% {
+    width: 150px;
+  }
+
+  50% {
+    width: 600px;
+  }
+
+  100% {
+    width: 150px;
+  }
+}
+
+.rect-2 {
+  width: 300px;
+  height: 150px;
+  background-color: lightslategray;
+  /* indicando una animation-fill-mode di "forwards" 
+  indicate all'animazione che al suo termine debba mantenere gli
+  stili indicati al keyframe 100% */
+  animation: rectAnimation2 3s linear 0s 1 forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes rectAnimation2 {
+  0% {
+    width: 150px;
+  }
+
+  100% {
+    width: 600px;
+  }
+}
+
+#box-section {
+  margin-top: 50px;
+}
+
+#box-container {
+  display: flex;
+  align-items: center;
+}
+
+#box-container > button {
+  margin-right: 20px;
+}
+
+#moving-box {
+  width: 100px;
+  height: 100px;
+  background-color: lawngreen;
+}
+
+@keyframes movingBox {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(200px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.moving {
+  animation: movingBox 5s infinite forwards;
+}
+
+@keyframes goHome {
+  0% {
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.home {
+  animation: goHome 2s 1 forwards;
+}

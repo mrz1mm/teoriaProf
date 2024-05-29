@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+/* 
+    scriveremo qui le nostre regole di stile!
+    ATTENZIONE: lo sviluppo web moderno abbraccia la filosofia "MOBILE FIRST"
+    questo significa che qui dentro avremo innanzitutto le regole applicate a schermi di PICCOLA dimensione
+*/
+
+/* STILI MOBILE */
+
+body {
+  margin: 0;
+  padding: 10px;
+  background-color: bisque;
+  font-family: 'Kanit', sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+main img {
+  max-width: 100%;
+}
+
+#dynamic-img {
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+  background: url(https://placedog.net/300);
+}
+
+/* GRAZIE ALLE MEDIA QUERIES "AGGIUSTIAMO" IL LAYOUT MOBILE PER RENDERLO MAGGIORMENTE
+FRUIBILE SU SCHERMI DI PIÙ GRANDE DIMENSIONE (E PIÙ LARGHI) */
+
+/* IPOTIZZIAMO UN BREAKPOINT xs/sm intorno ai 576px (tablet piccoli) */
+
+@media screen and (min-width: 577px) {
+  /* qui dentro mettiamo gli stili per uno schermo PIÙ grande di uno smartphone, diciamo un piccolo tablet */
+
+  body {
+    padding: 10px 10%;
+    background-color: lightblue;
+  }
+
+  ul li {
+    display: inline;
+    margin: 0 5px;
+  }
+
+  #dynamic-img {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    background: url(https://placedog.net/500);
+  }
+}
+
+/* IPOTIZZIAMO UN BREAKPOINT sm/md intorno ai 768px (tablet grandi) */
+
+@media screen and (min-width: 769px) {
+  body {
+    background-color: darkolivegreen;
+    color: white;
+  }
+
+  #img-container {
+    text-align: center;
+  }
+
+  #dynamic-img {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    background: url(https://placedog.net/700);
+  }
+}
+
+/* IPOTIZZIAMO UN BREAKPOINT sm/md intorno ai 992px (laptops/desktops) */
+
+@media screen and (min-width: 993px) {
+  /* IPOTIZZIAMO che non si debba vedere il footer? */
+
+  body {
+    background-color: deeppink;
+    color: white;
+  }
+
+  footer {
+    display: none;
+  }
+
+  #dynamic-img {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    background: url(https://placedog.net/900);
+  }
+}
+
+@media print {
+  /* stili ESCLUSIVI per la stampa */
+  nav,
+  footer {
+    display: none;
+  }
+
+  body {
+    background-color: white;
+  }
+}

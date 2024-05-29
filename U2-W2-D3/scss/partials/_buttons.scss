@@ -1,0 +1,4 @@
+.btn {
+  @include genericButton(darkgreen);
+  // qui dentro dovrebbero essere andate a finire le proprietà del mixin genericButton
+}

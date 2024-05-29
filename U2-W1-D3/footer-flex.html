@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Footer</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      #top {
+        background-color: #04a2b0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+      }
+
+      #top div {
+        margin-bottom: 1em;
+        font-size: 1.5em;
+      }
+
+      #top p:first-of-type {
+        margin-bottom: 0;
+      }
+
+      #middle {
+        background-color: #015d5f;
+      }
+
+      #middle ul {
+        margin: 0;
+        list-style: none;
+        color: white;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1em 0;
+      }
+
+      #bottom {
+        background-color: #9ed3ca;
+        padding: 1em 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #bottom p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <div id="top">
+        <p>Questions</p>
+        <p>
+          Write us at
+          <a href="mailto:example@example.com">example@example.com</a>
+        </p>
+        <div>
+          <i class="fa fa-facebook-square"></i>
+          <i class="fa fa-twitter-square"></i>
+          <i class="fa fa-youtube-play"></i>
+          <i class="fa fa-instagram"></i>
+        </div>
+      </div>
+      <div id="middle">
+        <ul>
+          <li>Privacy Policy</li>
+          <li>Terms of Use</li>
+          <li>Copyright</li>
+        </ul>
+      </div>
+      <div id="bottom">
+        <p><span id="current-year"></span>, all rights reserved.</p>
+        <p>Created with &lt;3 at EPICODE</p>
+      </div>
+    </footer>
+    <script>
+      // otteniamo un riferimento allo span con id "current-year"
+      const yearsSpan = document.getElementById('current-year')
+      // recupero tramite JS l'anno corrente dal browser
+      const currentYear = new Date().getFullYear() // 2024
+      // inserisco l'anno nello span vuoto
+      yearsSpan.innerText = currentYear
+    </script>
+  </body>
+</html>

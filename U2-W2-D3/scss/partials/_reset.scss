@@ -1,0 +1,16 @@
+// OGNI partial ha il nome che comincia con un _
+// è importantissimo chiamarli così perchè in questo modo i compilatori SASS li "ignoreranno" e non genereranno
+// per loro le versioni .css e .css.map
+// perchè è giusto così? perchè questi file non verranno utilizzati MAI da soli, ma verranno sempre IMPORTATI
+// in un file .scss vero e proprio (SENZA _ davanti!)
+
+// un partials di reset rappresenta il vostro foglio di reset
+body {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

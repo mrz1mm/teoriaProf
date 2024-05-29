@@ -1,0 +1,19 @@
+<form>
+
+  <input type="text" class="form-control" name="gusto" placeholder="gusto"
+  [(ngModel)]="pizzeArr[0].gusto">
+
+</form>
+
+<table class="table">
+  <tr>
+    <th>gusto</th>
+    <th>prezzo</th>
+    <th>disponibilità</th>
+  </tr>
+  <tr *ngFor="let p of pizzeArr">
+    <td>{{p.gusto}}</td>
+    <td>{{p.prezzo}}</td>
+    <td>{{p.disponibile}}</td>
+  </tr>
+</table>

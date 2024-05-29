@@ -1,0 +1,28 @@
+<p
+[ngStyle]="{
+  'background-color':bgColor,
+  'color':color
+}"
+>direttive works!</p>
+
+<!-- in pratica è come scrivere questo
+  <p
+  [style.backgroundColor]="bgColor"
+  [style.color]="color"
+  >direttive works!</p>
+-->
+
+<p [ngClass]="{
+  'alert':true,
+  'alert-success':success,
+  'alert-danger':!success,
+}">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+</p>
+
+<button class="btn btn-primary" (click)="toggleStatus()">
+  Cambia stato
+</button>
+
+<!--*ngIf è una direttiva strutturale che decide di creare o distruggere un elemento in base ad un valore boolean ricevuto-->
+<p *ngIf="success">Elemento a scomparsa</p>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proprietà CSS Transform</title>
+    <link rel="stylesheet" href="./assets/css/transform.css" />
+  </head>
+  <body>
+    <!-- La proprietà CSS "transform" permette di apportare delle "trasformazioni" grafiche agli elementi HTML -->
+    <!-- NON utilizzate questa proprietà per risolvere problemi di impaginazione -->
+    <!-- perchè se "trasformati", gli elementi ignoreranno gli ingombri propri e altrui e potrebbero finire per sovrapporsi -->
+    <!-- rischieremo quindi di sovrastare altri elementi con i nostri spostamenti, con le nostre rotazioni etc. -->
+    <header>
+      <h1>PROPRIETÀ TRANSFORM</h1>
+    </header>
+    <main>
+      <section>
+        <h3>Transform rotate</h3>
+        <div class="box rotate">
+          <span>ROTATE</span>
+        </div>
+      </section>
+      <section>
+        <h3>Transform skew</h3>
+        <div class="box skew">
+          <span>SKEW</span>
+        </div>
+      </section>
+      <section>
+        <h3>Transform scale</h3>
+        <div class="box scale">
+          <span>SCALE</span>
+        </div>
+      </section>
+      <section>
+        <h3>Transform translate</h3>
+        <div class="box translate">
+          <span>TRANSLATE</span>
+        </div>
+      </section>
+      <h2>
+        Questo H2 continua a rispettare il flow della pagina, ignaro del box
+        translate che non si trova più sopra di lui
+      </h2>
+      <section>
+        <h3>Transform combined</h3>
+        <div class="box combined">
+          <span>COMBINED</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

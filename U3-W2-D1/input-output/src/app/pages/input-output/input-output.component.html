@@ -1,0 +1,9 @@
+
+<app-input [pizzaInput]="pizza"></app-input>
+<hr>
+<hr>
+<hr>
+<app-output (onDatoInviato)="gestisciDato($event)"></app-output>
+<ul>
+  <li *ngFor="let s of stringArr">{{s}}</li>
+</ul>

@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "name": "esempio-npm-pomeriggio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "ts": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

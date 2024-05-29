@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.btn {
+  width: 100px;
+  padding: 0 20px;
+  background-color: darkgreen;
+}
+
+nav link a {
+  color: blue;
+}/*# sourceMappingURL=style.css.map */

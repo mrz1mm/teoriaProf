@@ -1,0 +1,8 @@
+// questo file NON conterrà di per sé alcuno stile. Quello che farà sarà semplicemente ri-compattare
+// e riunire tutti i frammenti definiti nei partials che andremo ad importare.
+
+@import 'partials/reset'; // SENZA _ nel nome e senza estensione!
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/buttons';
+@import 'partials/header';

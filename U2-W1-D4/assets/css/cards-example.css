@@ -1,0 +1,48 @@
+html,
+body,
+main,
+section {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 0.9em;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 200px;
+  background-color: #626262;
+  color: white;
+  padding: 0 2em;
+  margin: 0 1em;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: all 0.3s linear 0s;
+}
+
+/* la prima card */
+.card:first-of-type {
+  transform: rotate(-20deg) translate(90px, 60px);
+}
+
+.card:last-of-type {
+  transform: rotate(20deg) translate(-90px, 60px);
+}
+
+.card:hover {
+  background-color: orange;
+  color: black;
+  transform: scale(1.2);
+  z-index: 10;
+  /* flex-grow: 1; */
+}

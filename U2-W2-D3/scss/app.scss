@@ -1,0 +1,320 @@
+// FEATURES DI SASS
+// 1) Possiamo scrivere del normalissimo CSS
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  color: red;
+}
+
+// nav {
+//   text-align: center;
+//   margin-top: 2em;
+// }
+
+// ul.navbar {
+//   margin: 0;
+//   padding: 0;
+//   list-style-type: none;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 5px;
+// }
+
+// 2) SELETTORI NIDIFICATI / ANNIDATI
+
+nav {
+  text-align: center;
+  margin-top: 2em;
+  .navbar {
+    // come un selettore "nav .navbar"
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    @media screen and (min-width: 600px) {
+      // il selettore implicito è "nav .navbar"
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      // come un selettore "nav .navbar a"
+      text-decoration: none;
+      // font-size: 0.9em;
+      @media screen and (min-width: 600px) {
+        // il selettore implicito è "nav .navbar a"
+        color: red;
+      }
+    }
+  }
+}
+
+.button-container {
+  text-align: center;
+}
+
+// 3) LAVORARE CON LE PSEUDOCLASSI (:hover, :active, :nth-of-type, etc.)
+button.primary-button {
+  background-color: lightblue;
+  color: black;
+  border-radius: 20px;
+  padding: 10px 20px;
+  border-color: rgb(135, 166, 176);
+  cursor: pointer;
+  &:hover {
+    // & è come se fosse una specie di "this"
+    // "button.primary-button:hover"
+    color: white;
+    background-color: rgb(58, 58, 233);
+    border-color: rgb(45, 45, 166);
+  }
+}
+
+nav {
+  ul {
+    li {
+      font-size: 0.9em;
+      &:nth-of-type(3) {
+        // la & è come "nav ul li:nth-of-type(3)"
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+// 4) UTILIZZARE UN PREFISSO COMUNE PER PROPRIETÀ SIMILI
+
+// p.main-paragraph {
+//   font-size: 1.15em;
+//   font-weight: 700; // come se fosse bold
+//   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+//     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+// }
+
+p.main-paragraph {
+  font: {
+    size: 1.15em;
+    weight: 700;
+    family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+}
+
+// 5) VARIABILI
+// le variabili in SASS servono per MEMORIZZARE dei valori (al fine di riutilizzarli)
+// i valori che salviamo nelle variabili potranno venire riutilizzati nelle regole di stile
+// concettualmente queste "variabili" sono più simili alle "costanti"
+
+// quali tipi di dato si possono salvare in SASS?
+// - valori numerici (1, 100, 10px, 2.5em, 23% etc.)
+// - stringhe ('hello', 'ciao')
+// - colori (red, lightblue, cyan, rgb(0,0,0), #ab3452 etc.)
+// - booleani (true, false)
+// - null
+// - valori "combinati" (1px solid black, 0 auto, etc.)
+// - liste di valori (10px, 12px, 14px) -> un po' come un array in JS
+// - mappe di coppie chiave/valore (in inglese "map") -> un po' come gli oggetti in JS
+
+// es.
+$main-margin: 35px; // d'ora in poi potrò riutilizzare questa quantità semplicemente utilizzando il suo nome, $main-margin
+$main-color: rgb(
+  20,
+  200,
+  120
+); // d'ora in poi potrò riutilizzare questo colore semplicemente utilizzando il suo nome, $main-color
+
+body {
+  margin: $main-margin; // la sintassi di utilizzo di una variabile è uguale alla sintassi della sua dichiarazione
+}
+
+header .header p {
+  color: $main-color;
+}
+
+$standard-border: 2px dotted darkcyan;
+
+p {
+  border: $standard-border;
+}
+
+$breakpoints: 576px, 768px, 1024px, 1200px;
+
+$breapoints-sizes: (
+  xs: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+);
+
+// meanwhile, in JS...
+// 5 == '5' -> true :(
+// 5 === '5' -> false :)
+
+// SASS poi sa utilizzare anche gli operatori matematici, di comparazione e logici
+// ==, !=, <, >, <=, >=
+// + - * /
+
+$standard-size: 100px;
+$sum: 576px + $standard-size;
+
+// 5) MIXINS
+// un MIXIN in SASS è un blocco di regole CSS richiamabile comodamente con un singolo nome
+
+$generic-padding: 10px 20px;
+
+@mixin buttonStyles {
+  color: darkviolet;
+  background-color: black;
+  padding: $generic-padding;
+  border-radius: 20px;
+}
+
+// D R Y -> don't repeat yourself
+
+.special-button-sm {
+  @include buttonStyles;
+  width: 100px;
+}
+
+.special-button-lg {
+  @include buttonStyles;
+  width: 200px;
+}
+
+.margin-top {
+  margin-top: $main-margin;
+}
+
+// i mixin possono anche accettare parametri, come le funzioni in JS!
+
+@mixin appCustomButton($custom-width: 100px) {
+  background-color: antiquewhite;
+  color: black;
+  border-radius: 15px;
+  width: $custom-width; // 100px o 200px a seconda delle due invocazioni
+}
+
+.custom-button-sm {
+  @include appCustomButton(
+
+  ); // se non passo all'invocazione del mixin appCustomButton un valore per $custom-width,
+  // il mixin utilizzerà il valore di default alla riga 198 settato a 100px
+}
+
+.custom-button-lg {
+  @include appCustomButton(200px);
+}
+
+@mixin defaultList($display-value: 'block') {
+  display: $display-value;
+}
+
+.list {
+  // inserito display: block
+  @include defaultList();
+}
+
+.list-responsive {
+  // inserito display: block
+  @include defaultList('flex');
+}
+
+// 6) INTERPOLAZIONE
+
+@mixin fontInterpolation($property, $value) {
+  font-#{$property}: $value;
+}
+
+// all'invocazione del mixin fontInterpolation DOVETE passare i valori per i due parametri
+
+.text-big {
+  // voi vorreste ottenere la proprietà:
+  // font-size: 2em;
+  @include fontInterpolation(size, 2em);
+}
+
+.text-bold {
+  // voi vorreste ottenere la proprietà:
+  // font-weight: 700;
+  @include fontInterpolation(weight, 700);
+}
+
+@mixin test($property, $value) {
+  #{$property}: $value;
+}
+
+.testclass {
+  @include test('color', 'red');
+  // potevo semplicemente scrivere color: red :)
+}
+
+// 7) CICLI
+// è possibile utilizzare anche in SASS dei cicli -> al fine di automatizzare la generazione di STILI
+// ma soprattutto anche di CLASSI
+
+$breakpoints-array: 576px, 768px, 1024px, 1200px;
+
+// quello che voglio fare è generare automaticamente delle CLASSI in css ciclando $breakpoints-array
+
+// .text-576px {
+//    font-size: 576px;
+// }
+
+// .text-768px {
+//    font-size: 768px;
+// }
+
+// .text-1024px {
+//    font-size: 1024px;
+// }
+
+// .text-1200px {
+//    font-size: 1200px;
+// }
+
+// ciclo la lista dei valori
+@each $size in $breakpoints-array {
+  // entrerò in questo ciclo 4 volte
+  // per ogni elemento di $breakpoints-array...
+  // $size rappresenta l'elemento corrente!
+  .text-#{$size} {
+    max-width: $size;
+  }
+}
+
+$margins-map: (
+  xs: 10px,
+  sm: 12px,
+  md: 15px,
+  lg: 18px,
+  xl: 36px,
+);
+
+// ciclo la mappa dei valori
+@each $size, $value in $margins-map {
+  // entrerò in questo ciclo 4 volte
+  // ad ogni ciclo $size è il NOME della proprietà (xs, md etc.) mentre $value è il valore (576px, 768px, etc.)
+  .margin-#{$size} {
+    margin: #{$value};
+  }
+
+  // ha creato ad es.
+  // .margin-xs {
+  //   margin: 10px;
+  // }
+}
+
+// 9) PARTIALS
+// SASS ci permette di lavorare su singoli, piccoli files che vanno ad occuparsi di creare gli stili
+// per porzioni della pagina
+// questo rende il lavoro più gestibile, modulare e mantenibile sul lungo termine
+
+// andiamo su style.scss

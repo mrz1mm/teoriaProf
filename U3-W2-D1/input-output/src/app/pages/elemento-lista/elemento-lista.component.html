@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{pizza.gusto}}</h5>
+    <p class="card-text">Costo: {{pizza.prezzo}}€</p>
+    <button class="btn btn-primary" (click)="inviaPizza(pizza)">
+      {{pizza.disponibile ? 'Disponibile' : 'Non disponibile'}}
+    </button>
+  </div>
+</div>

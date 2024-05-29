@@ -1,0 +1,37 @@
+<app-projection>
+  <!--questo contenuto verrà proiettato all'interno di app projection, che è predisposto-->
+  <button class="btn btn-success">Clicca qui</button>
+  <p #paragrafoProiettato>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis excepturi a odio, obcaecati similique vel blanditiis eum in non, at atque maiores cum sapiente culpa esse, expedita ad itaque. Impedit.</p>
+</app-projection>
+
+
+<hr>
+<hr>
+<hr>
+<hr>
+
+
+<app-multi-projection>
+
+   <!--
+    questo contenuto verrà proiettato all'interno di app multi projection, che è predisposto
+    nello specifico il contenuto apparirà in corrispondenza del tag
+    <ng-content select="[slot='s1']"></ng-content> grazie all'attributo select con valore [slot='s1']
+  -->
+  <p slot="s1">Primo contenuto</p>
+
+  <!--
+    questo contenuto verrà proiettato all'interno di app multi projection, che è predisposto
+    nello specifico il contenuto apparirà in corrispondenza del tag
+    <ng-content select="[slot='s2']"></ng-content> grazie all'attributo select con valore [slot='s2']
+  -->
+  <p slot="s2">Secondo contenuto</p>
+
+</app-multi-projection>
+
+<hr>
+<hr>
+<hr>
+<hr>
+
+<h1 #titolo>Titolo elemento con local variable</h1>

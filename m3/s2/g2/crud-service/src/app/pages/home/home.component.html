@@ -1,0 +1,44 @@
+<form *ngIf="creaPizza">
+  <input type="text" class="form-control"
+  name="gusto" [(ngModel)]="newPizza.gusto">
+
+  <input type="text" class="form-control"
+  name="prezzo" [(ngModel)]="newPizza.prezzo">
+
+  <select name="disponibile"  class="form-control"
+  [(ngModel)]="newPizza.disponibile">
+    <option [value]="true">Disponibile</option>
+    <option [value]="false">Non disponibile</option>
+  </select>
+  <button class="btn btn-primary" (click)="create()">Salva</button>
+</form>
+
+<button class="btn btn-success"
+(click)="creaPizza = !creaPizza">
+
+{{!creaPizza ? 'crea pizza' : 'Chiudi Form'}}
+
+</button>
+
+<table class="table">
+
+  <tr>
+    <th>#</th>
+    <th>gusto</th>
+    <th>prezzo</th>
+    <th>disponibile</th>
+    <th>Azioni</th>
+  </tr>
+
+  <tr *ngFor="let pizza of pizzeArr">
+    <td>{{pizza.id}}</td>
+    <td>{{pizza.gusto}}</td>
+    <td>{{pizza.prezzo}}</td>
+    <td>{{pizza.disponibile}}</td>
+    <td>
+      <button class="btn btn-warning">Modifica</button>
+      <button class="btn btn-danger" (click)="delete(pizza.id)">Elimina</button>
+    </td>
+  </tr>
+
+</table>

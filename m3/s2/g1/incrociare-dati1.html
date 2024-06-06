@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //questa funzione crea un array di tutti i post aggiungendo i dettagli dell'autore del singolo post
+        async function init(){
+
+            const postUrl = 'https://jsonplaceholder.typicode.com/posts'
+            const userUrl = 'https://jsonplaceholder.typicode.com/users'
+            
+            // const postResponse = await fetch(postUrl).then(res => res.json())
+            // const userResponse = await fetch(userUrl).then(res => res.json())
+            
+            //recupero tutti i post e tutti gli autori
+            const [posts, users] = await Promise.all([
+                fetch(postUrl).then(res => res.json()),
+                fetch(userUrl).then(res => res.json())
+            ])
+
+
+            let postConAutore = posts.map(p => {//ciclando ogni post
+                let author = users.find(u => u.id == p.userId ) ;//trovo l'autore di riferimento usando la corrispondenza tra user.id e post.userId
+
+                p.author = author;//una volta trovato l'autore lo salvo tra le informazioni del post
+
+                return p;//restituisco il post modificato
+            })
+
+            console.log(postConAutore);//la variabile postConAutore è il risultato desiderato, pronto per essere ciclato
+
+        }
+
+        init()
+
+    </script>
+    
+</body>
+</html>

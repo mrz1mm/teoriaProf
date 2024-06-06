@@ -1,0 +1,8 @@
+<input type="text" (keyup)="search()" [(ngModel)]="query">
+
+<hr>
+<hr>
+<div *ngFor="let todo of todos">
+  <h3>{{todo.todo}}</h3>
+  <p>{{todo.author?.firstName}} {{todo.author?.lastName}}</p>
+</div>

@@ -1,0 +1,13 @@
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Gusto</th>
+    <th>Prezzo</th>
+  </tr>
+
+  <tr *ngFor="let pizza of pizzeArr; let i = index;">
+    <td>{{i + 1}}</td>
+    <td>{{pizza.gusto}}</td>
+    <td>{{pizza.prezzo}}</td>
+  </tr>
+</table>

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row alert alert-success">
+
+    <button (click)="filterByTag($event,tag)" *ngFor="let tag of allTags" class="btn btn-info">{{tag}}</button>
+    <button (click)="resetFilters()" class="btn btn-warning">Annulla filtri</button>
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-4" *ngFor="let post of filteredPost">
+      <div class="card">
+        <app-single-post [post]="post"></app-single-post>
+      </div>
+    </div>
+  </div>
+
+</div>

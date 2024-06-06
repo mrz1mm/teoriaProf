@@ -1,0 +1,6 @@
+<div class="card-body">
+  <h5 class="card-title">{{post.title}}</h5>
+  <p class="card-text">{{post.body}}</p>
+  <button *ngFor="let tag of post.tags"
+  class="btn btn-primary">{{tag}}</button>
+</div>

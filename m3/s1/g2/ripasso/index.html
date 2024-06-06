@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //questa è una promise classica
+        let p = new Promise((success, reject)=>{
+            success('Promise conclusa')
+        })
+
+        p.then(dato => console.log(dato))
+        
+        
+        //questa è una promise ottenuta da una funzione async
+        async function test(){
+            return 'Async fn conclusa'
+        }
+        
+        test().then(dato => console.log(dato))
+
+
+
+        //questa è una fetch classica
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(dato => dato.json())
+        .then(dato => {
+            //fa qualcosa con il dato
+        })
+        
+        //questa è una fetch gestita da una funzione async
+        async function getTodos(){
+            
+            //await si può utilizzare solo all'interno di una funzione async (ma le nuove definizioni 2022 hanno cambiato questa cosa)
+            let response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+            let dato = await response.json()
+            //fa qualcosa con il dato
+        }
+        
+
+    </script>
+</body>
+</html>

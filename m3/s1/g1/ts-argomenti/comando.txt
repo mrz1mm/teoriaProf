@@ -1,0 +1,5 @@
+#comando che inizializza il progetto creando un gile config di ts
+tsc --init
+
+#per compilare a questo punto basta fare 
+tsc -w

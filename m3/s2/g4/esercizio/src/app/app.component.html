@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <h1>Numero likes: {{likesCount}}</h1>
+    <div class="col-6" *ngFor="let photo of photos">
+
+      <div class="card">
+        <img [src]="photo.thumbnailUrl" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{photo.title}}</h5>
+          <button (click)="like()" class="btn btn-primary">Mi piace</button>
+          <button (click)="delete(photo.id)" class="btn btn-danger">Elimina</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

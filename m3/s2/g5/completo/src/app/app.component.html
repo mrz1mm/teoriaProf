@@ -1,0 +1,8 @@
+<div class="container my-5">
+  <h1>Hey Boss, what's my task for the day?</h1>
+  <a [routerLink]='["/done"]' class="btn btn-primary me-2">See how much we've accomplished!</a>
+  <a [routerLink]='["/todo"]' class="btn btn-primary me-2">What's left?</a>
+  <a [routerLink]='["/users"]' class="btn btn-primary me-2">By user</a>
+  <a [routerLink]='["/"]' class="btn btn-primary">See all</a>
+  <router-outlet></router-outlet>
+</div>

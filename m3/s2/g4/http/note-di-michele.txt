@@ -1,0 +1,31 @@
+Quest'app contiene un'intera crudi di pizze.
+
+Notare che c'è un service che detiene tutti i metodi della crud, che restituiscono un observable.
+
+Tale Observable è utilizzato all'interno dei componenti dove avviene direttamente il Subscribe e i dati in arrivo dalle API vengono utilizzati.
+
+Il progetto utilizza json-server per simulare l'utilizzo di un Back end, Grazie a questo pacchetto Abbiamo a disposizione degli endpoint per lo sviluppo in locale.
+
+Se non sai cosa è, cerca su Google json-server.
+
+############################
+Installazione di json server
+############################
+
+Il comando utilizzato per installare json-server è "npm i json-server"
+
+Al momento in cui abbiamo installato il pacchetto, però Si è presentato un bug e di fatto la versione di json-server che abbiamo visto installarsi è una versione Alpha e quindi non stabile. Di conseguenza se vuoi la versione corretta osserva il mio package.json e vedrai tra le dipendenze quale versione ho installato.
+
+############################
+Installazione di ng-bootstrap
+############################
+
+NG-Bootstrap è un pacchetto specifico per Angular, che permette di installare rapidamente BootStrap e avere anche una serie di componenti, dato che sarà affrontato come argomento la prossima settimana, per oggi lo stiamo utilizzando solo al fine di installare velocemente bootstrap.
+Di fatto, lanciando il comando di installazione di questo pacchetto, Angular va a modificare i file in maniera automatica e non è più necessario modificare angular.json per far funzionare bootstrap.
+
+Il comando per l'installazione di Angie Bootstrap è disponibile sul suo sito, ad oggi il comando è questo che vedi :
+
+ng add @ng-bootstrap/ng-bootstrap
+
+
+Dato che queste cose evolvono velocemente, ti consiglio anche di imparare dove andare a recuperare questi comandi, Come sono fatti, e come utilizzarli, Al fine di raggiungere la massima autonomia possibile come professionista.

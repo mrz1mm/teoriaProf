@@ -1,0 +1,25 @@
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Gusto</th>
+    <th>Prezzo</th>
+    <th>Azioni</th>
+  </tr>
+
+  <tr *ngFor="let pizza of pizzeArr">
+    <td>{{pizza.id}}</td>
+    <td>{{pizza.gusto}}</td>
+    <td>{{pizza.prezzo}}</td>
+    <td>
+      <a class="btn btn-primary"
+      [routerLink]="[pizza.id]">Dettaglio</a>
+      <!--
+
+        [routerLink]="[pizza.id]
+
+        trovandomi già all'indirizzo /pizze questa riga aggiunge l'id della pizza cliccata, facendo anche navigare l'utente verso il componente chiamato detailcomponent (vedi app-routing.module.ts)
+
+      -->
+    </td>
+  </tr>
+</table>

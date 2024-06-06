@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //questa funzione crea un array di tutti gli autori aggiungendo la lista di post che ogni autore ha pubblicato
+        async function init(){
+
+            const postUrl = 'https://jsonplaceholder.typicode.com/posts'
+            const userUrl = 'https://jsonplaceholder.typicode.com/users'
+
+            //recupero tutti i post e tutti gli autori
+            const [posts, users] = await Promise.all([
+                fetch(postUrl).then(res => res.json()),
+                fetch(userUrl).then(res => res.json())
+            ])
+
+            let postPerAutore = users.map(u => {//ciclando ogni autore
+
+                const allPosts = posts.filter(p => p.userId == u.id);//trovo i post pubblicato da ogni autore usando la corrispondenza tra user.id e post.userId
+
+                u.posts = allPosts;//salvo l'array di post nell'oggetto autore
+
+                return u;//restituisco l'autore modificato
+            })
+
+            console.log(postPerAutore);
+
+        }
+
+        init()
+
+    </script>
+    
+</body>
+</html>

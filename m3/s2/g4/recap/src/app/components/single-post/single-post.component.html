@@ -1,0 +1,11 @@
+<h3>{{post.title}}</h3>
+<p>{{post.body}}</p>
+<!--
+  Usa questo se hai bisogno di farlo con un bottone
+-->
+  <button
+(click)="toggleStatus()"
+class="btn btn-primary"
+>Status: {{post.active}}</button>
+
+<input type="checkbox" [(ngModel)]="post.active">

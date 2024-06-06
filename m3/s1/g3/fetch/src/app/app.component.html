@@ -1,0 +1,22 @@
+<h1>Lista utenti usando array</h1>
+
+<div *ngIf="userArr.length == 0" class="alert alert-info">
+  Caricamento in corso
+</div>
+
+<table class="table" *ngIf="userArr.length > 0">
+  <tr>
+    <th>#</th>
+    <th>name</th>
+    <th>username</th>
+    <th>email</th>
+  </tr>
+
+  <tr *ngFor="let user of userArr">
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+  </tr>
+</table>
+<hr>
